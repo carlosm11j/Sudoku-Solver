@@ -18,7 +18,6 @@ import javax.swing.JSeparator;
 import java.lang.Math;
 
 public class GUI_Solver extends JFrame implements ActionListener {
-	JLabel infoLabel;
   static JTextField boxes[][] = new JTextField[9][9];
 
   static int[][] sodokuBoard = {
@@ -65,9 +64,6 @@ public class GUI_Solver extends JFrame implements ActionListener {
 
 		JPanel south = new JPanel();
 		south.setLayout(new GridLayout(1,3));
-
-    //Info Label
-    infoLabel = new JLabel("Sudoku Solver");
 
     //Clear Button
 		JButton clearButton = new JButton("Blank");
