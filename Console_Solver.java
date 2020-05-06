@@ -54,8 +54,8 @@ public class Solver {
 
   //Solve soduku board using backtracking
   public static boolean solveBoard(int[][] board) {
-    int row = -1;
-    int col = -1;
+    int row = 0;
+    int col = 0;
     boolean isComplete = true;
 
     //Check for empty entries
