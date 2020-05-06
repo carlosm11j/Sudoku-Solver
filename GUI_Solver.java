@@ -13,7 +13,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.JSeparator;
+import javax.swing.border.LineBorder;
+import javax.swing.BorderFactory;
 
 import java.lang.Math;
 
@@ -55,6 +56,16 @@ public class GUI_Solver extends JFrame implements ActionListener {
             return textPrefSize;
           }
         };
+        //Styling board
+        int leftAdd = 0;
+        int topAdd = 0;
+        if(j % 3 == 0) {
+          leftAdd += 2;
+        }
+        if(i % 3 == 0) {
+          topAdd += 2;
+        }
+        boxes[i][j].setBorder(BorderFactory.createMatteBorder(1+topAdd, 1+leftAdd, 1, 1, Color.BLACK));
         boxes[i][j].setHorizontalAlignment(JTextField.CENTER);
         north.add(boxes[i][j]);
       }
