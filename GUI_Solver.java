@@ -84,10 +84,6 @@ public class GUI_Solver extends JFrame implements ActionListener {
     JButton solveButton = new JButton("Solve");
 		south.add(solveButton);
 		solveButton.addActionListener(this);
-    //Solve Button
-    JButton checkButton = new JButton("Check");
-		south.add(checkButton);
-		checkButton.addActionListener(this);
     //Exit Button
 		JButton exitButton = new JButton("Random");
 		south.add(exitButton);
@@ -114,10 +110,6 @@ public class GUI_Solver extends JFrame implements ActionListener {
       else {
         resetBoard(sodokuBoard);
       }
-    }
-    else if(word.equals("Check")) {
-      getBoard(sodokuBoard);
-      checkUserEntries(sodokuBoard);
     }
 	}
 
@@ -239,22 +231,6 @@ public class GUI_Solver extends JFrame implements ActionListener {
     for(int i=0; i<board.length; i++) {
       for(int j=0; j<board.length; j++) {
         board[i][j] = Integer.parseInt(boxes[i][j].getText());
-      }
-    }
-  }
-
-  public static void checkUserEntries(int[][] board) {
-		//Check user entries based on final answer
-    for(int i=0; i<board.length; i++) {
-      for(int j=0; j<board.length; j++) {
-        if(board[i][j] != 0) {
-          if(isValidEntry(board, i, j, board[i][j])) {
-            boxes[i][j].setBackground(Color.BLUE);
-          }
-          else {
-            boxes[i][j].setBackground(Color.RED);
-          }
-        }
       }
     }
   }
